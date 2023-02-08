@@ -1,31 +1,16 @@
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class SpinWords {
 
   public static void main(String args[])  {
-    System.out.println(reverseWords("Welcome"));
+    System.out.println(spinWords("Welcome"));
   } 
 
   public static String spinWords(String sentence) {
-    String result = "";
-    String[] words = sentence.split("\\W+");
-    for (String word : words) {
-        if (word.length() > 4) {
-            word = reverseWords(word);
-            result += word;
-        } else {
-            result += word;
-        }
-    }
-    return result;
+    return Arrays.stream(sentence.split(" "))
+                     .map(word -> (word.length() >= 5) ? new StringBuilder(word).reverse().toString() : word)
+                     .collect(Collectors.joining(" "));
   }
 
-  static String reverseWords(String str)
-    {
-        String result = "";
-        for (int j = (str.length() - 1); j <= 0; j--) {
-            result += str.charAt(j);
-        }
-        return result;
-    }
 }
