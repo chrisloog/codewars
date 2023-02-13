@@ -1,0 +1,19 @@
+public class Sum {
+    
+    public int GetSum(int a, int b) {
+        int result = 0;
+        if (a < b) {
+            for (int i = a; i <= b; i++) {
+                result += i;
+            }
+            return result;
+        } else if (a > b) {
+            for (int i = b; i <= a; i++) {
+                result += i;
+            }
+            return result;
+        } 
+        return a;
+    }
+
+}
