@@ -1,6 +1,3 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Order {
 
     public static void main(String[] args) {
@@ -10,23 +7,15 @@ public class Order {
     }
 
     public static String order(String words) {
-        if (words == "" || words == null) {
-            return "";
-        }
-        String result = "";
-        String[] wordsStrings = words.split(" ");
-        String[] orderedWords = new String[wordsStrings.length];
-        for (String string : wordsStrings) {
-            Pattern pattern = Pattern.compile("\\d+");
-            Matcher matcher = pattern.matcher(string);
-            if (matcher.find()) {
-                int number = Integer.parseInt(matcher.group());
-                orderedWords[number - 1] = string;
+        String[] arr = words.split(" ");
+        StringBuilder result = new StringBuilder("");
+        for (int i = 0; i < 10; i++) {
+            for (String s : arr) {
+                if (s.contains(String.valueOf(i))) {
+                    result.append(s + " ");
+                }
             }
         }
-        for (String string : orderedWords) {
-            result += string + " ";
-        }
-        return result.trim();
+        return result.toString().trim();
     }
 }
