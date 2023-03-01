@@ -1,5 +1,7 @@
 public class Greed {
 
+    // https://www.codewars.com/kata/5270d0d18625160ada0000e4
+
     public static int greedy(int[] dice) {
         int[] counts = new int[7]; // initialize counts to all zeros
         for (int value : dice) {

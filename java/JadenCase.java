@@ -1,5 +1,7 @@
 public class JadenCase {
 
+    // https://www.codewars.com/kata/5390bac347d09b7da40006f6
+
     public static void main(String[] args) {
         System.out.println(toJadenCase("ma olen kool tool sool pool nool rool vool"));
     }

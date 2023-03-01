@@ -1,4 +1,6 @@
 public class Sum {
+
+    // https://www.codewars.com/kata/55f2b110f61eb01779000053
     
     public int GetSum(int a, int b) {
         int result = 0;

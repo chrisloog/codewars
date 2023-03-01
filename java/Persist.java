@@ -1,5 +1,7 @@
 public class Persist {
 
+    // https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec
+
     public static void main(String[] args) {
 		System.out.println(persistence(39) + " should be 3.");
         System.out.println(persistence(4) + " should be 0.");
