@@ -8,7 +8,7 @@ public class Kata{
     }
   
     public static String binaryAddition(int a, int b){
-      System.out.println(String.format("(%s + %s = %s in decimal or %s in binary)", a, b, a + b, Integer.toBinaryString(a + b)));  
+      System.out.printf("(%s + %s = %s in decimal or %s in binary)%n", a, b, a + b, Integer.toBinaryString(a + b));
       return Integer.toBinaryString(a + b);
     }
   }
