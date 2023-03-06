@@ -7,18 +7,19 @@ public class CamelCase {
     }
 
     public static String camelCase(String str) {
-        if (str.isEmpty() || str == null) {
+        if (str == null || str.isEmpty()) {
             return "";
         }
-        if (str.charAt(0) == ' ') {
-            str = str.substring(1);
-        }
-        String[] words = str.split("\s+");
-        String result = "";
+        String[] words = str.trim().split("\\s+");
+        StringBuilder resultBuilder = new StringBuilder(); 
         for (String word : words) {
-            result += word.substring(0, 1).toUpperCase() + word.substring(1);;
+            if (!word.isEmpty()) {
+                resultBuilder.append(Character.toUpperCase(word.charAt(0)));
+                resultBuilder.append(word.substring(1));
+            }
         }
-        return result.trim();
+        return resultBuilder.toString();
     }
+    
 
 }
